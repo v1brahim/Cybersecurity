@@ -5,59 +5,55 @@
 ## 🔍 Scanning & Enumeration
 
 ### Nmap
-```bash
-# Basic TCP scan
-nmap -sV -sC -oA scan_results <TARGET_IP>
 
-# Quick top ports scan
-nmap --top-ports 20 -T4 <TARGET_IP>
+```# Basic TCP scan
+nmap -sV -sC -oA scan_results <TARGET_IP>```
 
-# UDP scan (slow but thorough)
-nmap -sU -p 53,67,123,161 <TARGET_IP>
-
-# Aggressive scan with OS detection
-nmap -A -T4 <TARGET_IP>
-Key Flags:
-
--sV: Service detection
-
--sC: Default scripts
-
--p-: All ports (1-65535)
-
--A: Aggressive (OS/version/script/traceroute)
 
 Masscan
-bash
-# Blazing fast scan
-masscan -p1-65535 <TARGET_IP> --rate=1000 -e tun0
-🕵️‍♂️ Web Enumeration
-FFUF (Web Fuzzing)
-bash
-# Directory brute-forcing
-ffuf -w /path/to/wordlist -u http://<TARGET>/FUZZ -mc 200 -fs 4242
 
-# Vhost discovery
-ffuf -w subdomains.txt -u http://<TARGET> -H "Host: FUZZ.<TARGET>" -fs 0
+```# Blazing fast scan
+masscan -p1-65535 <TARGET_IP> --rate=1000 -e tun0```
+
+
+🕵️‍♂️ Web Enumeration
+
+FFUF (Web Fuzzing)
+
+```# Directory brute-forcing
+ffuf -w /path/to/wordlist -u http://<TARGET>/FUZZ -mc 200 -fs 4242```
+
+```# Vhost discovery
+ffuf -w subdomains.txt -u http://<TARGET> -H "Host: FUZZ.<TARGET>" -fs 0```
+
 Gobuster
-bash
-gobuster dir -u http://<TARGET> -w /usr/share/wordlists/dirb/common.txt -x php,html
+
+```gobuster dir -u http://<TARGET> -w /usr/share/wordlists/dirb/common.txt -x php,html```
+
+
 🔑 Privilege Escalation
 Linux PrivEsc
+
 bash
-# SUID finder
-find / -perm -4000 -type f 2>/dev/null
+```# SUID finder
+find / -perm -4000 -type f 2>/dev/null```
 
-# Kernel exploits
-uname -a; searchsploit <kernel_version>
+```# Kernel exploits
+uname -a; searchsploit <kernel_version>```
+
 Windows PrivEsc
-powershell
-# Service permissions
-accesschk.exe /accepteula -uwcqv *
 
-# AlwaysInstallElevated check
-reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+powershell
+```# Service permissions
+accesschk.exe /accepteula -uwcqv *```
+
+```# AlwaysInstallElevated check
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated```
+
+
 🛠️ Exploitation
+
+
 Metasploit
 bash
 # Basic workflow
