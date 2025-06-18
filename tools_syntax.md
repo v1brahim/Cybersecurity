@@ -24,6 +24,7 @@ masscan <IP> -p1-65535 --rate=1000  # Full TCP scan with throttle
 ```bash
 ffuf -w wordlist.txt -u http://<IP>/FUZZ -mc 200
 ffuf -w words.txt -u http://<IP>/page.php?id=FUZZ -fs 0
+ffuf -w /usr/share/wordlists/amass/subdomains-top1mil-110000.txt -u http://cyprusbank.thm/ -H "Host:FUZZ.cyprusbank.thm" -fw 1 - 500 
 ```
 
 ### Gobuster – Directory Bruteforcing
