@@ -5,9 +5,9 @@
 ## 🔍 Scanning & Enumeration
 
 ### Nmap
-
-```# Basic TCP scan
-nmap -sV -sC -oA scan_results <TARGET_IP>
+```
+# Basic TCP scan
+nmap -sV -sC -oA scan_results <TARGET_IP>```
 
 
 Masscan
