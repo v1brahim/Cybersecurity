@@ -5,14 +5,15 @@
 ## 🔍 Scanning & Enumeration
 
 ### Nmap
-```
+```bash
 # Basic TCP scan
 nmap -sV -sC -oA scan_results <TARGET_IP>```
 
 
 Masscan
 
-```# Blazing fast scan
+```bash
+# Blazing fast scan
 masscan -p1-65535 <TARGET_IP> --rate=1000 -e tun0```
 
 
@@ -20,7 +21,8 @@ masscan -p1-65535 <TARGET_IP> --rate=1000 -e tun0```
 
 FFUF (Web Fuzzing)
 
-```# Directory brute-forcing
+```bash
+# Directory brute-forcing
 ffuf -w /path/to/wordlist -u http://<TARGET>/FUZZ -mc 200 -fs 4242```
 
 ```# Vhost discovery
