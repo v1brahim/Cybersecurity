@@ -209,8 +209,32 @@ We find that the user "ec2-user" is giving a different response link, and after 
 We conclude that the correct username is "ec2-user"
 Now we will try the same thing but this time we use "ec2-user"  for the username and bruteforce the password
 
-![2.png](/home/kali/Documents/GitHub/Cybersecurity/PortSwigger/2.png)
+![3.png](/home/kali/Documents/GitHub/Cybersecurity/PortSwigger/2.png)
 
+We find that a lot of passwords give a different length, but only 1 of them gives a 302 response which is the "soccer", which has to be a redirect to the logged in account
 
+And thats how we solve the lab by logging in with ec2-user:soccer
+
+## Bypassing two-factor authentication
+
+At times, the implementation of two-factor authentication is flawed to the point where it can be bypassed entirely.
+
+If the user is first prompted to enter a password, and then 
+prompted to enter a verification code on a separate page, the user is effectively in a "logged in" state before they have entered the verification code. In this case, it is worth testing to see if you can directly skip to "logged-in only" pages after completing the first authentication step. Occasionally, you will find that a website doesn't actually check whether or not you completed the second step before loading the page.
+
+### Lab 2 solution
+
+We need to capture the login request with the victim's given credentials
+after we capture the login request we get redirected another page where it asks for the 2fa code
+but we notice that we still get a cookie session ID even tho we didn't enter the 2fa code
+we can use this to  access the accounts configuration page by adding the id of the user and adding the cookie header to authorize ourselves
+
+```
+GET /my-account?id=carlos HTTP/2
+Host: 0aa900c0047b7a7d82336fed007d00cb.web-security-academy.net
+Cookie: session=CU0rcdr4oXtdKM7RDv1WOrDpwVDu3qqp
+```
+
+# 4. Server-side request forgery (SSRF)
 
 
