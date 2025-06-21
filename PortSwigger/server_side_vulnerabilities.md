@@ -61,8 +61,11 @@ This approach is insecure because a user can modify the value and access functio
 ### Lab 3 Solution
 
 Frist we login with the credentials given
+
 After we login we can capture any activity we preform using the normal user
+
 for exammple in this case we can reset our gmail
+
 After capturing the action with burpsuite we find a paramter called Admin set to False
 
 ```
@@ -94,7 +97,9 @@ In some applications, the exploitable parameter does not have a predictable valu
 ### Lab 4 Solution
 
 We first login in with the credentials given
+
 We find that each user has a unique GUID
+
 After looking through some posts on the website, we find a post by our target user "carlos", and after clicking on carlos, we find that it discloses the GUID of carlos, which can be used to login as carlos and find the Solution
 
 We login to this guid with this link
@@ -114,13 +119,16 @@ An attacker might be able to gain access to another user's account page using th
 
 If the target user is an application administrator, then the attacker will gain access to an administrative account page. This page might disclose the administrator's password or provide a means of changing it, or might provide direct access to privileged functionality.
 
-#### Lab 4 Solution
+### Lab 5 Solution
 
 First we login with the given credentials to the lab website
 When we go to the my-account page, we see that our user has a password hidden with javascript
+
 We can easily go to the sourcecode and reveal the current password
+
 We also see that our page has a parameter "?id=wiener"
 The idea is to change the use wiener to "administrator", that lets us access the admin account configuration page and reveal the password for administrator
+
 which we ca use then to delete carlos and solve the lab
 
 ## 
