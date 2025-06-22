@@ -235,7 +235,7 @@ Cookie: session=CU0rcdr4oXtdKM7RDv1WOrDpwVDu3qqp
 
 # 4. Server-side request forgery (SSRF)
 
-## Lab Solution
+### Lab Solution
 
 capture the check stock action request
 change the stockAPi header to requests the page "http://192.168.0.1:8080/admin"
@@ -291,7 +291,7 @@ This script enables you to pass an arbitrary system command via a query paramete
 
 `GET /example/exploit.php?command=id HTTP/1.1`
 
-## Lab 1 Solution
+### Lab 1 Solution
 
 login with the given credentials
 
@@ -334,8 +334,8 @@ As you can see, the message body is split into separate parts for each of the fo
 ## Flawed file type validation - Continued
 
 One way that websites may attempt to validate file uploads is to check that this input-specific `Content-Type` header matches an expected MIME type. If the server is only expecting image files, for example, it may only allow types like `image/jpeg` and `image/png`. Problems can arise when the value of this header is implicitly trusted 
-by the server. If no further validation is performed to check whether the contents of the file actually match the supposed MIME type, this defense can be easily bypassed using tools like Burp Repeater.
+by the server. If no further validation is performed to check whether the contents of the file actually match the supposed MIME type, this defense can be easily bypassed using tools like Burp Repesssssater.
 
-## Lab 2 Solution
+### Lab 2 Solution
 
-
+azer
