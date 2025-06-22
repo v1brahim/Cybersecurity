@@ -338,6 +338,16 @@ by the server. If no further validation is performed to check whether the conten
 
 ### Lab 2 Solution
 
+Same approach for the first lab
+
+we upload our php code file
+
+this time we get a response that says we are not allowed to upload php
+
+we capture the upload request using burpsuite
+
+we see that there is a header for file-type
+
 
 
 
