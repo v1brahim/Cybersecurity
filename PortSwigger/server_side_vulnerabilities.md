@@ -346,8 +346,10 @@ this time we get a response that says we are not allowed to upload php
 
 we capture the upload request using burpsuite
 
-we see that there is a header for file-type
+we see that there is a header for Content-type
 
+we change the value to image/jpeg to bypass the type protection
 
+and we get uploaded succesfully
 
 
